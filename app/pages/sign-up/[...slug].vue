@@ -1,5 +1,9 @@
+<script setup lang="ts">
+definePageMeta({ layout: false })
+</script>
+
 <template>
-  <div style="display:flex;min-height:100vh;align-items:center;justify-content:center">
+  <div class="flex min-h-dvh items-center justify-center">
     <SignUp />
   </div>
 </template>

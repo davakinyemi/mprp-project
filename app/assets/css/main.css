@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/*
+ * Color tokens. Surfaces, borders and text are greyscale; blue is the only
+ * accent and means "interactive or selected".
+ *
+ * The theme lives on <html data-theme>. No attribute means "follow the
+ * system"; "light" or "dark" is a forced choice and beats the media query.
+ */
+:root {
+  color-scheme: light;
+  --surface: #fbfbfc;
+  --surface-raised: #ffffff;
+  --surface-sunken: #f1f2f4;
+  --border: #dfe1e5;
+  --text: #1b1d21;
+  --text-muted: #6a6f78;
+  --accent: #2b64d9;
+
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface: #121316;
+    --surface-raised: #191b1f;
+    --surface-sunken: #0c0d0f;
+    --border: #2a2d33;
+    --text: #e4e6ea;
+    --text-muted: #8b919b;
+    --accent: #5b8cf0;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface: #121316;
+  --surface-raised: #191b1f;
+  --surface-sunken: #0c0d0f;
+  --border: #2a2d33;
+  --text: #e4e6ea;
+  --text-muted: #8b919b;
+  --accent: #5b8cf0;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --font-sans: var(--sans);
+  --font-mono: var(--mono);
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--sans);
+}
